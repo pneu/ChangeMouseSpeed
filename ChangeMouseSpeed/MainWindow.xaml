@@ -5,21 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChangeMouseSpeed"
         mc:Ignorable="d"
-        Title="MouseChanger" Height="146.853" Width="264.744"
+        Title="MouseChanger" Height="139.853" Width="264.744"
         Icon="pack://application:,,,/Resources/cursor.png">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="45*"/>
-            <RowDefinition Height="71*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Separator HorizontalAlignment="Left" Height="96" Margin="10,10,0,0" VerticalAlignment="Top" Width="237" Grid.RowSpan="2"/>
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="29,30,0,0" Grid.Row="1" VerticalAlignment="Top" Width="206" Height="18"
+        <Separator Margin="0,0,0,0" Grid.RowSpan="2"/>
+        <Slider x:Name="slider" Grid.Row="1" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Height="Auto" Width="206"
                 LargeChange="1" SmallChange="1" Minimum="0" Maximum="20" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="slider_ValueChanged"/>
-        <Label x:Name="label" Content="現在値" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="25" Width="57"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="67,14,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="54"
-                 Text="{Binding ElementName=slider, Path=Value}" IsEnabled="False"/>
-        <CheckBox x:Name="checkBox" Content="増やせる(_C)" IsChecked="True" HorizontalAlignment="Left" Margin="138,16,0,0" VerticalAlignment="Top"
-                  Checked="checkBox_Checked" Unchecked="checkBox_Unchecked"/>
-
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <Label x:Name="label" Grid.Column="0" Content="現在値" Margin="0,0,0,0" Height="Auto" Width="Auto" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
+                <TextBox x:Name="textBox" Grid.Column="1" Margin="0,0,0,0" TextWrapping="Wrap" Height="Auto" Width="54" HorizontalAlignment="Center" VerticalAlignment="Center"
+                         Text="{Binding ElementName=slider, Path=Value}" IsEnabled="False"/>
+            </StackPanel>
+            <CheckBox x:Name="checkBox" Grid.Column="2" Content="増やせる(_C)" IsChecked="True" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"
+                      Checked="checkBox_Checked" Unchecked="checkBox_Unchecked"/>
+        </Grid>
     </Grid>
 </Window>
