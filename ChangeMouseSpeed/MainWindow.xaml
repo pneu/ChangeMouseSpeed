@@ -23,7 +23,7 @@
             <StackPanel Orientation="Horizontal">
                 <Label x:Name="label" Grid.Column="0" Content="現在値" Margin="0,0,0,0" Height="Auto" Width="Auto" HorizontalAlignment="Center" VerticalContentAlignment="Center"/>
                 <TextBox x:Name="textBox" Grid.Column="1" Margin="0,0,0,0" TextWrapping="Wrap" Height="Auto" Width="54" HorizontalAlignment="Center" VerticalAlignment="Center"
-                         Text="{Binding ElementName=slider, Path=Value}" IsEnabled="False"/>
+                         Text="{Binding ElementName=slider, Path=Value, Mode=TwoWay}" IsEnabled="True"/>
             </StackPanel>
             <CheckBox x:Name="checkBox" Grid.Column="2" Content="増やせる(_C)" IsChecked="True" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"
                       Checked="checkBox_Checked" Unchecked="checkBox_Unchecked"/>
